@@ -10,6 +10,9 @@ def index():
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=顏偉森>傳送使用者暱稱</a><br>"
     homepage += "<a href=/I>顏偉森簡介網頁</a><br>"
+    homepage += "<a href=/A>職涯測驗結果</a><br>"
+    homepage += "<a href=/B>個人求職自傳履歷網頁</a><br>"
+    homepage += "<a href=/C>感興趣的工作網頁</a><br>"
     homepage += "<a href=/account>表單</a><br>"
     return homepage
 
@@ -31,6 +34,19 @@ def welcome():
 def about():
     return render_template("about.html")
 
+@app.route("/A")
+def about():
+    return render_template("text.html")
+
+
+@app.route("/B")
+def about():
+    return render_template("jobsearch.html")
+    
+@app.route("/C")
+def about():
+    return render_template("Interest work.html")
+    
 @app.route("/account", methods=["GET", "POST"])
 def account():
     if request.method == "POST":
